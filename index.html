@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3 Plus</title>
+</head>
+<body>
+<script>
+    function checkSNT(num) {
+        let isSNT = true;
+        if (num == 2 ){
+            isSNT =  true;
+        }else if (num < 2 || num % 2 == 0){
+            isSNT =  false;
+        }else if (num > 2){
+            for (i = 3 ; i<= Math.sqrt(num);i++){
+                if (num % i == 0){
+                    isSNT = false;
+                    break;
+                }
+            }
+        }
+
+        return isSNT;
+
+    }
+
+
+    function inSNT(num) {
+
+        for (j = 0 ; j <= num ; j++){
+            if (checkSNT(j)){
+               document.write(j+",\n");
+            }
+
+
+        }
+
+    }
+
+
+    inSNT(prompt("nhap vao so bat ki"))
+</script>
+</body>
+</html>
